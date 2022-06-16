@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven '3.8.5'
+        maven 'mvn-3.8.5'
     }
     
     parameters {
@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Source') {
             steps {
-                git branch: 'main', changelog: false, credentialsId: 'github', poll: false, url: 'https://github.com/ajilraju/spring-boot-jsp.git'
+                git branch: 'main', changelog: false, credentialsId: 'c30cbeef-fb29-4b61-85fc-22dfd091a915', poll: false, url: 'https://github.com/prajrai/spring-boot-jsp.git'
             }
         }
         stage('Test') {
