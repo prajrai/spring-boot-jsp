@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sh '''
                     version=$(perl -nle 'print "$1" if /<version>(v\\d+\\.\\d+\\.\\d+)<\\/version>/' pom.xml)
-                    rsync -avzPe 'ssh -i $PUB_KEY' target/news-${version}.jar root@$3.145.205.85:~/
+                    rsync -avzPe 'ssh -i $PUB_KEY' target/news-${version}.jar root@$3.142.144.96:~/
                 '''
             }
         }
