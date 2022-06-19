@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Copying Artifcats') {
             environment {
-                PUB_KEY = credentials('web-srv-pub') 
+                PUB_KEY = credentials( 'web-srv-pub' ) 
             }
             steps {
                 sh '''
