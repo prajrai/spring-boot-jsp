@@ -32,8 +32,8 @@ pipeline {
             }
             steps {
                 sh '''
-                    version=$(perl -nle 'print "$1" if /<version>(v\\d+\\.\\d+\\.\\d+)<\\/version>/' pom.xml)
-                    rsync -avzP ssh -i $PUB_KEY target/news-${version}.jar ubuntu@18.220.29.168:~/
+                    version=$(perl -nle 'print "$1" if /<version>(v\\d+\\.\\d+\\.\\d+)<\\/version>/' pom.xml)                  
+                    rsync -avzPe 'ssh -o StrictHostKeyChecking=no' target/news-${version}.jar ubuntu@18.220.29.168:~/
                 '''
             }
         }
